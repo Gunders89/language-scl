@@ -1,7 +1,7 @@
 {
   "name": "language-scl",
   "main": "./lib/language-scl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Siemens SCL language support in Atom",
   "keywords": [],
   "activationCommands": {

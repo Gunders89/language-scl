@@ -1,0 +1,17 @@
+{
+  "name": "language-scl",
+  "version": "0.0.0",
+  "description": "Siemens SCL language support in Atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gunders89/language-scl.scl"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "license": "MIT"
+}

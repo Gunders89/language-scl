@@ -1,0 +1,130 @@
+'.source.scl':
+  'if-statement':
+    'prefix': 'if'
+    'body': 'IF ${1:condition} THEN \n\t${2:\/\/code} \nEND_IF;'
+  'if-else':
+    'prefix': 'ife'
+    'body': 'IF ${1:condition} THEN \n\t${2:\/\/code}\nELSE\n\t${3:\/\/code} \nEND_IF;'
+  'if-elseif':
+    'prefix': 'iff'
+    'body': 'IF ${1:condition} THEN \n\t${2:\/\/code}\nELSIF ${3:condition} THEN\n\t${3:\/\/code} \nEND_IF;'
+  'if-elseif-else':
+    'prefix': 'iffe'
+    'body': 'IF ${1:condition} THEN \n\t${2:\/\/code}\nELSIF ${3:condition} THEN\n\t${3:\/\/code}\nELSE\n\t${3:\/\/code} \nEND_IF;'
+  'for-loop':
+    'prefix': 'for'
+    'body': 'FOR ${1:variable}:=${2:value} TO ${3:value} DO\n\t${4:\/\/code} \nEND_FOR;'
+  'while-loop':
+    'prefix': 'while'
+    'body': 'WHILE ${1:condition} DO \n\t${2:code}\nEND_WHILE;'
+  'new variable':
+    'prefix': 'nvar'
+    'body': '${1:variablename}\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: ${2:DataType} ;'
+  'New struct':
+    'prefix': 'struct'
+    'body': '${1:structname :STRUCT\n\t\/\/${2:structElements}\nEND_STRUCT;}'
+  'New Array':
+    'prefix': 'arr'
+    'body': '${1:arrayName} \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: ARRAY[${2:start}..${3:length}] OF ${4:DataType} ;'
+  'New var AT':
+    'prefix': 'varat'
+    'body': '${1:arrayName} AT ${2:atVar}\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: {3:DataType} ;'
+  'function block':
+    'prefix': 'fb'
+    'body':'\/\/Compiler Option --------------------------------------------
+            \n{S7ServerActive              :\= \'n\'  }
+            \n{SetOKFlag                   :\= \'n\'  }
+            \n{MonitorArrayLimits          :\= \'n\'  }
+            \n{OverwriteBlocks             :\= \'y\'  }
+            \n{CreateObjectCode            :\= \'y\'  }
+            \n{OptimizeObjectCode          :\= \'y\'  }
+            \n{CreateDebugInfo             :\= \'y\'  }
+            \n{GenerateReferenceData       :\= \'y\'  }
+            \n{SetMaximumStringLength      :\= \'254\'}
+            \n\/\/------------------------------------------------------------
+            \n
+            \nFUNCTION_BLOCK \"${1:Name}\"\nTITLE \= \'[V#01.01.01.01] ${2:Short description}\'
+            \n\/\/Copyright (c) 20xx Copyright ${3:Author} All Rights Reserved.
+            \n\/\/
+            \n\/\/
+            \n\/\/
+            \n\/\/===============================================================================
+            \n\/\/
+            \n\/\/
+            \n\/\/
+            \n\/\/
+            \n\/\/[V#01.01.01.01],${3:Author},${4:date}\t\tOriginal Version
+            \nAUTHOR\t :\t${3:Author}\nFAMILY\t :\t${5:Family}\nNAME\t\t :\t${1:Name}
+            \nVERSION\t:\t${7:\'1.0\'}\nKNOW_HOW_PROTECT
+            \n\/\/------------------------------------------------------------------------------------
+            \n\/\/  Declaration of Variables
+            \n\/\/------------------------------------------------------------------------------------
+            \nCONST\n\t\/\/constants\nEND_CONST
+            \n${7:}
+            \nVAR_INPUT\n\t\/\/inputs\nEND_VAR
+            \n
+            \nVAR_IN_OUT\n\t\/\/in_outs\nEND_VAR
+            \n
+            \nVAR_OUTPUT\n\t\/\/outputs\n\END_VAR
+            \n
+            \nVAR\n\t\/\/variables\nEND_VAR
+            \n
+            \nVAR_TEMP\n\t\/\/temporary variables\nEND_VAR
+            \n
+            \n\/\/------------------------------------------------------------------------------------
+            \n\/\/  Code Section
+            \n\/\/------------------------------------------------------------------------------------
+            \n
+            \nBEGIN\n\/\/code\nEND_FUNCTION_BLOCK
+            '
+  'function':
+    'prefix': 'func'
+    'body':'\/\/Compiler Option --------------------------------------------
+            \n{S7ServerActive              :\= \'n\'  }
+            \n{SetOKFlag                   :\= \'n\'  }
+            \n{MonitorArrayLimits          :\= \'n\'  }
+            \n{OverwriteBlocks             :\= \'y\'  }
+            \n{CreateObjectCode            :\= \'y\'  }
+            \n{OptimizeObjectCode          :\= \'y\'  }
+            \n{CreateDebugInfo             :\= \'y\'  }
+            \n{GenerateReferenceData       :\= \'y\'  }
+            \n{SetMaximumStringLength      :\= \'254\'}
+            \n\/\/------------------------------------------------------------
+            \n
+            \nFUNCTION \"${1:Name}\":${7:DataType}\nTITLE \= \'[V#01.01.01.01] ${2:Short description}\'
+            \n\/\/Copyright (c) 20xx Copyright ${3:Author} All Rights Reserved.
+            \n\/\/
+            \n\/\/
+            \n\/\/
+            \n\/\/===============================================================================
+            \n\/\/
+            \n\/\/
+            \n\/\/
+            \n\/\/
+            \n\/\/[V#01.01.01.01],${3:Author},${4:date}\t\tOriginal Version
+            \nAUTHOR\t :\t${3:Author}\nFAMILY\t :\t${5:Family}\nNAME\t\t :\t${1:Name}
+            \nVERSION\t:\t${7:\'1.0\'}\nKNOW_HOW_PROTECT
+            \n\/\/------------------------------------------------------------------------------------
+            \n\/\/  Declaration of Variables
+            \n\/\/------------------------------------------------------------------------------------
+            \nCONST\n\t\/\/constants\nEND_CONST
+            \n
+            \nVAR_INPUT\n\t\/\/inputs\nEND_VAR
+            \n
+            \nVAR_IN_OUT\n\t\/\/in_outs\nEND_VAR
+            \n
+            \nVAR_OUTPUT\n\t\/\/outputs\n\END_VAR
+            \n
+            \nVAR\n\t\/\/variables\nEND_VAR
+            \n
+            \nVAR_TEMP\n\t\/\/temporary variables\nEND_VAR
+            \n
+            \n\/\/------------------------------------------------------------------------------------
+            \n\/\/  Code Section
+            \n\/\/------------------------------------------------------------------------------------
+            \n
+            \nBEGIN
+            \n\/\/code
+            \n\/\/\"${1:Name}\"\t\t\t\t\t:\=<writeToOutput>
+            \nEND_FUNCTION
+            '

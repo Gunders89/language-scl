@@ -1,0 +1,202 @@
+scopeName: 'source.scl'
+name: 'Siemens SCL'
+fileTypes: ['scl', 'SCL']
+
+patterns: [
+
+    {
+      #TIME type
+      match: '\\b(T|TIME)#[0-9]((\\d*?d)?(\\d*?h)?(\\d*?m)?(\\d*?s)?(\\d*?ms)?)\\b'
+      name: 'support.class.scl'
+    }
+
+    {
+      #hex type
+      match: '\\b(16)#[0-9A-F]([0-9A-F]|\\_)+\\b'
+      name: 'support.class.scl'
+    }
+
+    {
+      #binary type
+      match: '\\b(2)#[0-1]([0-1]|\\_)+\\b'
+      name: 'support.class.scl'
+    }
+
+    {
+      match: '(?i)\\b(ARRAY|BOOL|BYTE|CHAR|COUNTER|DATE|DATE_AND_TIME|INT|DINT|DT|DWORD|POINTER|REAL|S5TIME|STRING|TIME|TIMER|TIME_OF_DAY|TOD|WORD)\\b'
+      name: 'support.class.scl'
+    }
+
+    {
+      match: '(?i)\\b(STRUCT|END_STRUCT)\\b'
+      name: 'support.type.scl'
+    }
+
+    {
+      #punctuation
+      match: '\\;'
+      name: 'punctuation.terminator.statement.scl'
+    }
+
+    {
+      #comment block
+      begin: '\\(\\*'
+      captures:
+        0:
+          name: 'punctuation.definition.comment.scl'
+      end: '\\*\\)'
+      name: 'comment.block.scl'
+    }
+
+    {
+      #comment line
+      captures:
+        1:
+          name: 'punctuation.definition.comment.scl'
+      match: '(//).*$\\n?'
+      name: 'comment.line.double-slash.scl'
+    }
+
+    {
+      #numeric
+      match: '\\b((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))\\b'
+      name: 'constant.numeric.scl'
+    }
+
+    {
+      #true
+      match: '(?i)\\btrue\\b'
+      name: 'constant.language.boolean.true.scl'
+    }
+
+    {
+      #false
+      match: '(?i)\\bfalse\\b'
+      name: 'constant.language.boolean.false.scl'
+    }
+
+    {
+      #Flow control
+      match: '(?i)\\b(break|case|end_case|continue|do|to|else|elsif|AT|for|end_for|goto|if|not|end_if|return|of|while|end_while|then)\\b'
+      name: 'keyword.control.scl'
+    }
+
+    {
+      #Declarations
+      match: '(?i)\\b(var_input|var_output|var|VAR_IN_OUT|BEGIN|var_temp|end_var|const|end_const)\\b'
+      name: 'keyword.control.scl'
+    }
+
+    {
+      #operators
+      match: '!|\\$|\\&|<\\=|>\\=|<>|<|>|(\\*\\*)|(\\=\\=)|!|\\&\\&|\\*|\\/|\\-|\\+|:|\\=|\\b(void)\\b'
+      name: 'keyword.control.scl'
+    }
+
+    {
+      #Arithmetic operations
+      match: '(?i)\\b(MOD|DIV)\\b'
+      name: 'keyword.control.scl'
+    }
+
+    {
+      match: '(?i)\\b(AND|OR|XOR)\\b'
+      name: 'keyword.control.scl'
+    }
+
+    {
+      match: '\\:\\='
+      name: 'keyword.operator.assignment.scl'
+    }
+    {
+      captures:
+        1:
+          name: 'storage.type.function.scl'
+        2:
+          name: 'entity.name.function.scl'
+        3:
+          name: 'punctuation.definition.parameters.begin.scl'
+        4:
+          name: 'variable.paramter.function.scl'
+        5:
+          name: 'punctuation.definition.paramters.end.scl'
+      match: '(?i)\\b(FUNCTION)\\s+([a-zA-Z_$]\\w*)?'
+      name: 'storage.type.function.scl'
+    }
+
+    {
+      match: '(?i)\\b(END_FUNCTION)\\b'
+      name: 'storage.type.function.scl'
+    }
+
+    {
+      captures:
+        1:
+          name: 'storage.type.function.scl'
+        2:
+          name: 'entity.name.function.scl'
+        3:
+          name: 'punctuation.definition.parameters.begin.scl'
+        4:
+          name: 'variable.paramter.function.scl'
+        5:
+          name: 'punctuation.definition.paramters.end.scl'
+      match: '(?i)\\b(FUNCTION_BLOCK)\\s+([a-zA-Z_$]\\w*)?'
+      name: 'storage.type.function.scl'
+    }
+
+    {
+      match: '(?i)\\b(END_FUNCTION_BLOCK)\\b'
+      name: 'storage.type.function.scl'
+    }
+
+    {
+      match: '(?i)\\b(S7_)\\w+'
+      name: 'support.variable.scl'
+    }
+
+    {
+      captures:
+        1:
+          name: 'support.function.scl'
+      match: '\\w([a-zA-Z_$]\\w*)?(?=((\\()(.*?)(\\))))'
+      #match: '\\b([a-zA-Z_$]\\w*)?(?=(\\s*(\\()(.*?)(\\))))'
+      name: 'support.function.scl'
+    }
+
+    {
+      begin: '\''
+      end: '\''
+      name: 'string.quoted.single.scl'
+    }
+
+    {
+      begin: '\"'
+      end: '\"'
+      name: 'entity.name.function.scl'
+    }
+
+    {
+      #numeric functions
+      match: '(?i)\\b(ABS|SQR|SQRT|EXP|EXPD|LN|LOG|ACOS|ASIN|ATAN|COS|SIN|TAN)\\b'
+      name: 'support.function.scl'
+    }
+    {
+      #Bit string functions
+      match: '(?i)\\b(ROL|ROR|SHL|SHR)\\b'
+      name: 'support.function.scl'
+    }
+
+    {
+      #Selecting values
+      match: '(?i)\\b(SEL|MAX|MIN|LIMIT|MUX)\\b'
+      name: 'support.function.scl'
+    }
+
+    {
+      #Conversion - Math
+      match: '(?i)\\b(ROUND|TRUNC)\\b'
+      name: 'support.function.scl'
+    }
+
+]

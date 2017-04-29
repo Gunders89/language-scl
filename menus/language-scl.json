@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle language-scl",
+        "command": "language-scl:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "language-scl",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "language-scl:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

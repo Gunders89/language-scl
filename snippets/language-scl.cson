@@ -28,7 +28,7 @@
     'body': '${1:arrayName}                                                                        : ARRAY[${2:start}..${3:length}] OF ${4:DataType} ;'
   'New var AT':
     'prefix': 'varat'
-    'body': '${1:varName} AT ${2:atVar}                                                            : {3:DataType} ;'
+    'body': '${1:varName} AT ${2:atVar}                                                                 : ${3:DataType} ;'
   'Function block':
     'prefix': 'fb'
     'body':'\/\/Compiler Option --------------------------------------------

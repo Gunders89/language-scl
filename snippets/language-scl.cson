@@ -1,35 +1,35 @@
 '.source.scl':
-  'if-statement':
+  'If-statement':
     'prefix': 'if'
     'body': 'IF ${1:condition} THEN \n\t${2:\/\/code} \nEND_IF;'
-  'if-else':
+  'If-else':
     'prefix': 'ife'
     'body': 'IF ${1:condition} THEN \n\t${2:\/\/code}\nELSE\n\t${3:\/\/code} \nEND_IF;'
-  'if-elseif':
+  'If-elseif':
     'prefix': 'iff'
     'body': 'IF ${1:condition} THEN \n\t${2:\/\/code}\nELSIF ${3:condition} THEN\n\t${3:\/\/code} \nEND_IF;'
-  'if-elseif-else':
+  'If-elseif-else':
     'prefix': 'iffe'
     'body': 'IF ${1:condition} THEN \n\t${2:\/\/code}\nELSIF ${3:condition} THEN\n\t${3:\/\/code}\nELSE\n\t${3:\/\/code} \nEND_IF;'
-  'for-loop':
+  'For-loop':
     'prefix': 'for'
     'body': 'FOR ${1:variable}:=${2:value} TO ${3:value} DO\n\t${4:\/\/code} \nEND_FOR;'
-  'while-loop':
+  'While-loop':
     'prefix': 'while'
     'body': 'WHILE ${1:condition} DO \n\t${2:code}\nEND_WHILE;'
-  'new variable':
+  'New variable':
     'prefix': 'nvar'
-    'body': '${1:variablename}\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: ${2:DataType} ;'
+    'body': '${1:variablename}                                                                     : ${2:DataType} ;'
   'New struct':
     'prefix': 'struct'
-    'body': '${1:structname :STRUCT\n\t\/\/${2:structElements}\nEND_STRUCT;}'
-  'New Array':
+    'body': '${1:structname} :STRUCT\n\t\/\/${2:structElements}\nEND_STRUCT;'
+  'New array':
     'prefix': 'arr'
-    'body': '${1:arrayName} \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: ARRAY[${2:start}..${3:length}] OF ${4:DataType} ;'
+    'body': '${1:arrayName}                                                                        : ARRAY[${2:start}..${3:length}] OF ${4:DataType} ;'
   'New var AT':
     'prefix': 'varat'
-    'body': '${1:arrayName} AT ${2:atVar}\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t: {3:DataType} ;'
-  'function block':
+    'body': '${1:varName} AT ${2:atVar}                                                            : {3:DataType} ;'
+  'Function block':
     'prefix': 'fb'
     'body':'\/\/Compiler Option --------------------------------------------
             \n{S7ServerActive              :\= \'n\'  }
@@ -54,8 +54,11 @@
             \n\/\/
             \n\/\/
             \n\/\/[V#01.01.01.01],${3:Author},${4:date}\t\tOriginal Version
-            \nAUTHOR\t :\t${3:Author}\nFAMILY\t :\t${5:Family}\nNAME\t\t :\t${1:Name}
-            \nVERSION\t:\t${7:\'1.0\'}\nKNOW_HOW_PROTECT
+            \nAUTHOR\t :\t${3:Author}
+            \nFAMILY\t :\t${5:Family}
+            \nNAME\t\t :\t${1:Name}
+            \nVERSION\t:\t${7:\'1.0\'}
+            \nKNOW_HOW_PROTECT
             \n\/\/------------------------------------------------------------------------------------
             \n\/\/  Declaration of Variables
             \n\/\/------------------------------------------------------------------------------------
@@ -77,8 +80,8 @@
             \n
             \nBEGIN\n\/\/code\nEND_FUNCTION_BLOCK
             '
-  'function':
-    'prefix': 'func'
+  'Function':
+    'prefix': 'fn'
     'body':'\/\/Compiler Option --------------------------------------------
             \n{S7ServerActive              :\= \'n\'  }
             \n{SetOKFlag                   :\= \'n\'  }
@@ -102,8 +105,11 @@
             \n\/\/
             \n\/\/
             \n\/\/[V#01.01.01.01],${3:Author},${4:date}\t\tOriginal Version
-            \nAUTHOR\t :\t${3:Author}\nFAMILY\t :\t${5:Family}\nNAME\t\t :\t${1:Name}
-            \nVERSION\t:\t${7:\'1.0\'}\nKNOW_HOW_PROTECT
+            \nAUTHOR\t :\t${3:Author}
+            \nFAMILY\t :\t${5:Family}
+            \nNAME\t\t :\t${1:Name}
+            \nVERSION\t:\t${7:\'1.0\'}
+            \nKNOW_HOW_PROTECT
             \n\/\/------------------------------------------------------------------------------------
             \n\/\/  Declaration of Variables
             \n\/\/------------------------------------------------------------------------------------

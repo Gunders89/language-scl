@@ -86,7 +86,7 @@
   'S7_message':
     'prefix': 'S7_message'
     'body': 'S7_message'
-    'description':'Identifies a paramter for communication'
+    'description':'Identifies a parameter for communication'
   'S7_param':
     'prefix': 'S7_param'
     'body': 'S7_param'
@@ -178,7 +178,7 @@
   'S7_visible':
     'prefix': 'S7_visible'
     'body': 'S7_visible'
-    'description':'Parameters in CFC is visible or invisible'
+    'description':'Make parameters in CFC visible or invisible'
   'S7_qc':
     'prefix': 'S7_qc'
     'body': 'S7_qc'

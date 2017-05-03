@@ -1,22 +1,22 @@
 '.source.scl':
   'If-statement':
     'prefix': 'if'
-    'body': 'IF ${1:condition} THEN \n\t${2:\/\/code} \nEND_IF;'
+    'body': 'if ${1:condition} then \n\t${2:\/\/code} \nend_if;'
   'If-else':
     'prefix': 'ife'
-    'body': 'IF ${1:condition} THEN \n\t${2:\/\/code}\nELSE\n\t${3:\/\/code} \nEND_IF;'
+    'body': 'if ${1:condition} then \n\t${2:\/\/code}\nelse\n\t${3:\/\/code} \nend_if;'
   'If-elseif':
     'prefix': 'iff'
-    'body': 'IF ${1:condition} THEN \n\t${2:\/\/code}\nELSIF ${3:condition} THEN\n\t${3:\/\/code} \nEND_IF;'
+    'body': 'if ${1:condition} then \n\t${2:\/\/code}\nelsif ${3:condition} then\n\t${3:\/\/code} \nend_if;'
   'If-elseif-else':
     'prefix': 'iffe'
-    'body': 'IF ${1:condition} THEN \n\t${2:\/\/code}\nELSIF ${3:condition} THEN\n\t${3:\/\/code}\nELSE\n\t${3:\/\/code} \nEND_IF;'
+    'body': 'if ${1:condition} then \n\t${2:\/\/code}\nelsif ${3:condition} then\n\t${3:\/\/code}\nelse\n\t${3:\/\/code} \nend_if;'
   'For-loop':
     'prefix': 'for'
-    'body': 'FOR ${1:variable}:=${2:value} TO ${3:value} DO\n\t${4:\/\/code} \nEND_FOR;'
+    'body': 'for ${1:variable}:=${2:value} to ${3:value} do\n\t${4:\/\/code} \nend_for;'
   'While-loop':
     'prefix': 'while'
-    'body': 'WHILE ${1:condition} DO \n\t${2:code}\nEND_WHILE;'
+    'body': 'while ${1:condition} do \n\t${2:code}\nend_while;'
   'New variable':
     'prefix': 'nvar'
     'body': '${1:variablename}                                                                     : ${2:DataType} ;'

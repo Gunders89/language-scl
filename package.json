@@ -1,16 +1,19 @@
 {
   "name": "language-scl",
-  "main": "./lib/language-scl",
   "version": "0.2.5",
   "description": "Siemens SCL language support in Atom",
   "keywords": [],
-  "activationCommands": {
-    "atom-workspace": "language-scl:toggle"
+  "homepage": "https://github.com/Gunders89/language-scl#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gunders89/language-scl.git"
   },
-  "repository": "https://github.com/Gunders89/language-scl",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {},
+  "readme": "# language-scl package for Atom\n\nAdds syntax highlighting and snippets to SCL files in Atom.\n\nContributions are greatly appreciated. Please fork this repository and open a pull request to add snippets, make grammar changes, etc.\n",
+  "readmeFilename": "README.md"
 }

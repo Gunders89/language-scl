@@ -1,6 +1,6 @@
 {
   "name": "language-scl",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "Siemens SCL language support in Atom",
   "keywords": [],
   "homepage": "https://github.com/Gunders89/language-scl#readme",

@@ -1,8 +1,10 @@
-'source.scl':
+'.source.scl':
   'editor':
     'autoIndentOnPaste': false
+    'autoIndent': true
     'softTabs': true
-    'tabLength': 4
+    'tabLength': 2
     'commentStart': '// '
-    'increaseIndentPattern': ''
-    'decreaseIndentPattern': ''
+    'increaseIndentPattern': '^\\s*(if|then|elsif|else|case|[0-9]*\\:|for|while|do|repeat).*$'
+    'decreaseIndentPattern': '^\\s*(then|do|end_if;|end_case;|end_for;|end_while;|until|end_repeat;).*$'
+    'decreaseNextIndentPattern': '^\\s*(end_if;|end_case;|end_for;|end_while;|until|end_repeat;).*$'

@@ -13,7 +13,7 @@
     'body': 'if ${1:condition} then \n\t${2:\/\/code}\nelsif ${3:condition} then\n\t${4:\/\/code}\nelse\n\t${5:\/\/code} \nend_if;'
   'Case-else':
     'prefix': 'case'
-    'body': 'case ${1:} of \n\t${2:}:\n\t\t${3:}\n\t${4:}:\n\t\t${5:}\nelse\n\t${6:}\nend_case'
+    'body': 'case ${1:} of \n\t${2:}:\n\t\t${3:}\n\t${4:}:\n\t\t${5:}\nelse\n\t${6:}\nend_case;'
   'For-loop':
     'prefix': 'for'
     'body': 'for ${1:variable}:=${2:value} to ${3:value} do\n\t${4:\/\/code} \nend_for;'

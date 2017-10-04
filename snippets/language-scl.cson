@@ -1,40 +1,40 @@
 '.source.scl':
   'If-statement':
     'prefix': 'if'
-    'body': 'if ${1:condition} then \n\t${2:\/\/code}; \nend_if;\n${3:}'
+    'body': 'if ${1:_condition_} then \n\t${2://code}; \nend_if;\n${3:}'
   'If-else':
     'prefix': 'ife'
-    'body': 'if ${1:condition} then \n\t${2:\/\/code};\nelse\n\t${3:\/\/code}; \nend_if;\n${4:}'
+    'body': 'if ${1:_condition_} then \n\t${2://code};\nelse\n\t${3:\/\/code}; \nend_if;\n${4:}'
   'If-elseif':
     'prefix': 'iff'
-    'body': 'if ${1:condition} then \n\t${2:\/\/code};\nelsif ${3:condition} then\n\t${4:\/\/code};\nend_if;\n${5:}'
+    'body': 'if ${1:_condition_} then \n\t${2:\/\/code};\nelsif ${3:_condition_} then\n\t${4://code};\nend_if;\n${5:}'
   'If-elseif-else':
     'prefix': 'iffe'
-    'body': 'if ${1:condition} then \n\t${2:\/\/code};\nelsif ${3:condition} then\n\t${4:\/\/code};\nelse\n\t${5:\/\/code};\nend_if;\n${6:}'
+    'body': 'if ${1:_condition_} then \n\t${2://code};\nelsif ${3:_condition_} then\n\t${4://code};\nelse\n\t${5://code};\nend_if;\n${6:}'
   'Case-else':
     'prefix': 'case'
     'body': 'case ${1:_variable_name_} of \n\t${2:1}:\n\t\t${3://Statement section case 1};\n\t${4:2..4}:\n\t\t${5://Statement section case 2 to 4};\n\telse\n\t${6://Statement section else};\nend_case;\n${7:}'
   'For-loop':
     'prefix': 'for'
-    'body': 'for ${1:variable}:=${2:value} to ${3:value} do\n\t${4:\/\/code};\nend_for;\n${5:}'
+    'body': 'for ${1:_variable_}:=${2:_value_} to ${3:_value_} do\n\t${4://code};\nend_for;\n${5:}'
   'While-loop':
     'prefix': 'while'
-    'body': 'while ${1:condition} do \n\t${2://code};\nend_while;\n${3:}'
+    'body': 'while ${1:_condition_} do \n\t${2://code};\nend_while;\n${3:}'
   'Repeat-statement':
     'prefix': 'repeat'
-    'body': 'repeat ${1:_result_} := ${2:_value_};\nuntil ${3:_error_}\nend_repeat;\n${4:}'
+    'body': 'repeat ${1:_result_} := ${2:_value_};\nuntil ${3:_condition_}\nend_repeat;\n${4:}'
   'New variable':
     'prefix': 'nvar'
-    'body': '${1:variablename}                                                                     : ${2:DataType} ;'
+    'body': '${1:_variable_name_}                                                                     : ${2:DataType} ;\n\t${3:}'
   'New struct':
     'prefix': 'struct'
-    'body': '${1:structname} :STRUCT\n\t\/\/${2:structElements}\nEND_STRUCT;'
+    'body': '${1:_struct_name_} :STRUCT\n\t${2://structElements}\nEND_STRUCT;'
   'New array':
     'prefix': 'arr'
-    'body': '${1:arrayName}                                                                        : ARRAY[${2:start}..${3:length}] OF ${4:DataType} ;'
+    'body': '${1:_array_name_}                                                                        : ARRAY[${2:lo}..${3:hi}] OF ${4:DataType} ;\n\t${5:}'
   'New var AT':
     'prefix': 'varat'
-    'body': '${1:varName} AT ${2:atVar}                                                                 : ${3:DataType} ;'
+    'body': '${1:_variable_name_} AT ${2:_at_var_}                                                                 : ${3:DataType} ;\n\t${4:}'
   'Function block':
     'prefix': 'fb'
     'body':'\/\/Compiler Option --------------------------------------------

@@ -77,7 +77,7 @@ patterns: [
 
     {
       #Flow control
-      match: '(?i)\\b(break|case|end_case|continue|do|to|else|elsif|AT|for|end_for|goto|if|not|end_if|return|of|while|end_while|then)\\b'
+      match: '(?i)\\b(break|case|end_case|continue|do|to|else|elsif|AT|for|end_for|goto|if|not|end_if|return|of|while|end_while|then|repeat|until|end_repeat|exit)\\b'
       name: 'keyword.control.scl'
     }
 
@@ -181,6 +181,7 @@ patterns: [
       match: '(?i)\\b(ABS|SQR|SQRT|EXP|EXPD|LN|LOG|ACOS|ASIN|ATAN|COS|SIN|TAN)\\b'
       name: 'support.function.scl'
     }
+
     {
       #Bit string functions
       match: '(?i)\\b(ROL|ROR|SHL|SHR)\\b'
@@ -197,6 +198,12 @@ patterns: [
       #Conversion - Math
       match: '(?i)\\b(ROUND|TRUNC)\\b'
       name: 'support.function.scl'
+    }
+
+    {
+      #Region keyword
+      match: '(?i)\\b(region|end_region)\\b'
+      name: 'entity.name.section.scl'
     }
 
 ]

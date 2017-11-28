@@ -1,3 +1,6 @@
+## 0.3.3
+* Added keyword: any
+
 ## 0.3.2 - Twelfth release
 * Added keywords: exit, repeat, until, end_repeat
 * Added keywords: region, end_region (TIA)

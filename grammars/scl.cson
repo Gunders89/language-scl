@@ -1,6 +1,6 @@
 scopeName: 'source.scl'
 name: 'Siemens SCL'
-fileTypes: ['scl', 'SCL']
+fileTypes: ['scl', 'SCL','udt']
 
 patterns: [
 
@@ -83,7 +83,7 @@ patterns: [
 
     {
       #Declarations
-      match: '(?i)\\b(var_input|var_output|var|VAR_IN_OUT|BEGIN|var_temp|end_var|const|end_const)\\b'
+      match: '(?i)\\b(var_input|var_output|var|VAR_IN_OUT|BEGIN|var_temp|end_var|const|end_const|type|end_type)\\b'
       name: 'keyword.control.scl'
     }
 

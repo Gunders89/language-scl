@@ -1,3 +1,7 @@
+## 0.3.4
+* Added keyword: type, end_type
+* Enabled highlighting of .udt files
+
 ## 0.3.3
 * Added keyword: any
 

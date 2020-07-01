@@ -140,3 +140,53 @@
             \n\/\/\"${1:Name}\"\t\t\t\t\t:\=<writeToOutput>
             \nEND_FUNCTION
             '
+  'Offdelay timer':
+    'prefix': 'TOF'
+    'body': """
+      #TOF( IN  := ${1:bool_in},
+            PT  := ${2:time_in},
+            Q   => ${3:bool_out},
+            ET  => ${4:time_out});
+      ${5:}
+    """
+  'Ondelay timer':
+    'prefix': 'TON'
+    'body': """
+      #TON( IN  := ${1:bool_in},
+            PT  := ${2:time_in},
+            Q   => ${3:bool_out},
+            ET  => ${4:time_out});
+      ${5:}
+    """
+  'Up Counter':
+    'prefix': 'CTU'
+    'body': """
+      #CTU( CU  := ${1:bool_in},
+            R   := ${2:bool_in},
+            PV  := ${3:int_in},
+            Q   => ${4:bool_out},
+            CV  => ${5:int_out});
+      ${6:}
+    """
+  'Up/down Counter':
+    'prefix': 'CTUD'
+    'body': """
+      #CTUD(  CU  := ${1:bool_in},
+              CD  := ${2:bool_in},
+              R   := ${3:bool_in},
+              LD  := ${4:bool_in},
+              PV  := ${5:int_in},
+              QU  => ${6:bool_out},
+              QD  => ${7:bool_out},
+              CV  => ${8:int_out});
+      ${9:}
+    """
+  'Pulse output':
+    'prefix': 'TP'
+    'body': """
+      #TP(  IN  := ${1:bool_in},
+            PT  := ${2:time_in},
+            Q   => ${3:bool_out},
+            ET  => ${4:time_out});
+      ${5:}
+    """

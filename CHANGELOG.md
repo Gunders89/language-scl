@@ -1,3 +1,6 @@
+## latest
+* Added snippets for TON, TOF, CTU, CTUD and TP
+
 ## 0.3.4
 * Added keyword: type, end_type, label, end_label
 * Enabled highlighting of .udt files
